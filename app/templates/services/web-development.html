@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Development Services – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <button onclick="history.back()" class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded inline-flex items-center">
+      ← Go Back
+    </button>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-[#b00020] mb-6">Full-Stack Web Development</h1>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">The Problem</h2>
+      <p class="text-gray-600">
+        In today’s digital-first world, many businesses suffer from websites that are slow, outdated, difficult to maintain, or completely disconnected from their audience. This results in poor user engagement, lost leads, and diminished brand credibility.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">The Solution</h2>
+      <p class="text-gray-600">
+        I craft modern, high-performance web applications tailored to your goals — built with Flask, PostgreSQL, TailwindCSS, and optionally React. Every website is responsive, SEO-optimized, fast-loading, and designed to convert your visitors into loyal customers. Whether you're a startup, entrepreneur, or enterprise, you get a strategic online presence that works for you 24/7.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Pricing Plans</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Starter -->
+        <form method="POST" action="/order-package">
+          <input type="hidden" name="tier" value="Starter">
+          <input type="hidden" name="price" value="250">
+          <div class="border p-6 rounded shadow text-center bg-white">
+            <h3 class="text-xl font-bold mb-2">Starter</h3>
+            <p class="text-gray-600 mb-4">Perfect for individuals or startups launching their first online presence.</p>
+            <ul class="text-sm text-left mb-4 space-y-1">
+              <li>✅ Single-page responsive website</li>
+              <li>✅ Contact form & basic SEO setup</li>
+              <li>✅ 5 days delivery time</li>
+            </ul>
+            <p class="font-bold text-[#b00020] mb-4">$250</p>
+            <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+          </div>
+        </form>
+
+        <!-- Professional -->
+        <form method="POST" action="/order-package">
+          <input type="hidden" name="tier" value="Professional">
+          <input type="hidden" name="price" value="600">
+          <div class="border p-6 rounded shadow text-center bg-white">
+            <h3 class="text-xl font-bold mb-2">Professional</h3>
+            <p class="text-gray-600 mb-4">Ideal for growing businesses that need a flexible and scalable website.</p>
+            <ul class="text-sm text-left mb-4 space-y-1">
+              <li>✅ Up to 6 pages + blog/news section</li>
+              <li>✅ CMS backend & admin panel</li>
+              <li>✅ Performance & SEO optimization</li>
+            </ul>
+            <p class="font-bold text-[#b00020] mb-4">$600</p>
+            <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+          </div>
+        </form>
+
+        <!-- Enterprise -->
+        <form method="POST" action="/order-package">
+          <input type="hidden" name="tier" value="Enterprise">
+          <input type="hidden" name="price" value="1200">
+          <div class="border p-6 rounded shadow text-center bg-white">
+            <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+            <p class="text-gray-600 mb-4">Full-stack application for enterprise-grade scalability and custom needs.</p>
+            <ul class="text-sm text-left mb-4 space-y-1">
+              <li>✅ Custom dashboard, APIs & DB integration</li>
+              <li>✅ E-commerce or SaaS ready</li>
+              <li>✅ Advanced security & testing</li>
+            </ul>
+            <p class="font-bold text-[#b00020] mb-4">$1200+</p>
+            <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+          </div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Custom Order -->
+    <section class="bg-white py-10 px-6 mt-10 rounded-lg shadow-md">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-2 text-center">Need Something Unique?</h3>
+      <p class="text-gray-600 text-center mb-6">
+        Don't see a package that fits your needs? Describe your custom project and let's build something extraordinary together.
+      </p>
+      <div class="flex justify-center">
+        <button onclick="openModal('Web Development')" class="bg-[#b00020] hover:bg-[#870018] text-white px-6 py-3 rounded-lg transition duration-300">
+          Request a Custom Order
+        </button>
+      </div>
+
+      <div id="customOrderModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded shadow-md w-full max-w-md">
+          <h2 class="text-xl font-bold mb-4">Custom Order</h2>
+          <form action="/custom-order" method="POST">
+            <input type="hidden" name="service" id="modalServiceInput" value="">
+            <input type="text" name="name" placeholder="Your Name" class="w-full border p-2 mb-2 rounded" required>
+            <input type="email" name="email" placeholder="Your Email" class="w-full border p-2 mb-2 rounded" required>
+            <textarea name="details" placeholder="Describe your project..." class="w-full border p-2 mb-4 rounded" rows="4" required></textarea>
+            <div class="flex justify-end">
+              <button type="button" onclick="closeModal()" class="mr-2 px-4 py-2 bg-gray-300 rounded">Cancel</button>
+              <button type="submit" class="px-4 py-2 bg-[#b00020] text-white rounded">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="mb-12 mt-16 text-center">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">Watch How It Works</h2>
+      <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
+        <iframe
+          class="w-full h-64 md:h-96"
+          src="https://www.youtube.com/embed/9jo51nJrO0k"
+          title="Coming Soon"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="text-center mb-16">
+      <a href="/contact" class="inline-block bg-[#b00020] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition">Contact Us</a>
+    </section>
+  </div>
+
+</body>
+</html>

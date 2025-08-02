@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#fffaf8] text-gray-800 font-sans">
+
+ 
+  <header class="bg-[#b00020] text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Becoming Me</h1>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/company" class="hover:text-gray-200">Company</a>
+        <a href="/services" class="hover:text-gray-200">Services</a>
+        <a href="/portfolio" class="hover:text-gray-200">Portfolio</a>
+        <a href="/resume" class="hover:text-gray-200">Resume</a>
+        <a href="/blog" class="font-bold text-white underline">Blog</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
+           style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1400&q=80');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-bold">My Blog</h1>
+      <p class="mt-4 text-lg md:text-xl">Insights, tutorials, and thoughts from my journey</p>
+    </div>
+  </section>
+
+  
+  <section class="py-16 px-6 md:px-20 bg-[#fffaf8]">
+    <h2 class="text-3xl font-bold mb-10 text-center text-[#b00020]">Latest Posts</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2 text-[#b00020]">Why I Chose Full-Stack Dev</h3>
+        <p class="mb-4">A deep dive into my journey and why full-stack development became my passion.</p>
+      <a href="/blog/1" class="text-[#b00020] hover:underline font-semibold">Read more →</a>
+      </div>
+
+      
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2 text-[#b00020]">Design Thinking for Developers</h3>
+        <p class="mb-4">Merging creativity and logic to craft beautiful, functional apps.</p>
+      <a href="/blog/2" class="text-[#b00020] hover:underline font-semibold">Read more →</a>
+      </div>
+
+      
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition">
+        <h3 class="text-xl font-bold mb-2 text-[#b00020]">My Cybersecurity Mindset</h3>
+        <p class="mb-4">How learning cybersecurity changed how I code, think, and build secure systems.</p>
+       <a href="/blog/3" class="text-[#b00020] hover:underline font-semibold">Read more →</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="text-center py-6 text-gray-500 bg-[#fffaf8] border-t border-gray-200">
+    &copy; 2025 Emmanuel Owusu Boakye – Becoming Me
+  </footer>
+
+</body>
+</html>

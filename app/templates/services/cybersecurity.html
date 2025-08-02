@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cybersecurity Services – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  <style>
+    .modal.active {
+      display: flex !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <div class="max-w-6xl mx-auto px-4 py-4">
+    <button onclick="history.back()" class="text-sm bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded inline-flex items-center">
+      ← Go Back
+    </button>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-[#b00020] mb-6">Cybersecurity Best Practices</h1>
+
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">The Problem</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        In today’s digital world, both individuals and businesses are prime targets for cybercriminals. Many unknowingly leave themselves vulnerable due to poor password hygiene, lack of secure configurations, outdated software, or absence of structured security policies. These oversights can lead to data breaches, financial loss, and reputational damage.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">The Solution</h2>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        My approach is proactive and customized. I provide detailed security assessments, help implement secure development practices, and educate teams on risk mitigation strategies. Whether it’s strengthening your web application defenses or guiding you through compliance frameworks, I ensure your digital assets are secured end-to-end.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-4">Pricing Plans</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Starter -->
+        <form method="POST" action="/order-package" class="border p-6 rounded shadow text-center">
+          <input type="hidden" name="service_name" value="Cybersecurity Best Practices">
+          <input type="hidden" name="tier" value="Starter">
+          <input type="hidden" name="price" value="150">
+          <h3 class="text-lg font-bold mb-2">Starter</h3>
+          <p class="text-gray-600 mb-4">Entry-level security check covering common vulnerabilities and weak spots with a report and recommendations.</p>
+          <p class="font-bold text-[#b00020] mb-4">$150</p>
+          <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+        </form>
+
+        <!-- Professional -->
+        <form method="POST" action="/order-package" class="border p-6 rounded shadow text-center">
+          <input type="hidden" name="service_name" value="Cybersecurity Best Practices">
+          <input type="hidden" name="tier" value="Professional">
+          <input type="hidden" name="price" value="400">
+          <h3 class="text-lg font-bold mb-2">Professional</h3>
+          <p class="text-gray-600 mb-4">Includes vulnerability scanning, code audit, and mitigation strategies for applications and websites.</p>
+          <p class="font-bold text-[#b00020] mb-4">$400</p>
+          <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+        </form>
+
+        <!-- Enterprise -->
+        <form method="POST" action="/order-package" class="border p-6 rounded shadow text-center">
+          <input type="hidden" name="service_name" value="Cybersecurity Best Practices">
+          <input type="hidden" name="tier" value="Enterprise">
+          <input type="hidden" name="price" value="900">
+          <h3 class="text-lg font-bold mb-2">Enterprise</h3>
+          <p class="text-gray-600 mb-4">Comprehensive pentesting, cloud security reviews, compliance consulting, and full incident response playbook.</p>
+          <p class="font-bold text-[#b00020] mb-4">$900+</p>
+          <button type="submit" class="bg-[#b00020] text-white px-4 py-2 rounded hover:bg-red-700 transition">Order Now</button>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- Custom Order -->
+    <section class="bg-white py-10 px-6 rounded-lg shadow-md mb-12">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-2 text-center">Need Something Unique?</h3>
+      <p class="text-gray-600 text-center mb-6">
+        Don't see a package that fits your needs? Describe your specific cybersecurity concerns and let's create a tailored solution together.
+      </p>
+      <div class="flex justify-center">
+        <button onclick="openModal('Cybersecurity Best Practices')" class="bg-[#b00020] hover:bg-[#870018] text-white px-6 py-3 rounded-lg transition duration-300">
+          Request a Custom Order
+        </button>
+      </div>
+    </section>
+
+    <!-- Video -->
+    <section class="mb-12 text-center">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">Watch How It Works</h2>
+      <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
+        <iframe
+          class="w-full h-64 md:h-96"
+          src="https://www.youtube.com/embed/9jo51nJrO0k"
+          title="Coming Soon"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- CTA Button -->
+    <section class="text-center mb-10">
+      <a href="/contact" class="inline-block bg-[#b00020] text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-red-700 transition">
+        Request a Security Audit
+      </a>
+    </section>
+
+  </div>
+
+  <!-- Custom Order Modal -->
+  <div id="customOrderModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-6 rounded shadow-md w-full max-w-md relative">
+      <button onclick="closeModal()" class="absolute top-2 right-3 text-gray-500 text-xl">&times;</button>
+      <h2 class="text-xl font-bold mb-4 text-[#b00020]">Custom Cybersecurity Order</h2>
+
+      <form action="/custom-order" method="POST">
+        <input type="hidden" name="service" id="modalServiceInput" value="">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full border p-2 mb-2 rounded">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full border p-2 mb-2 rounded">
+        <textarea name="details" placeholder="Describe your project..." rows="4" required class="w-full border p-2 mb-4 rounded"></textarea>
+        <div class="flex justify-end">
+          <button type="button" onclick="closeModal()" class="mr-2 px-4 py-2 bg-gray-300 rounded">Cancel</button>
+          <button type="submit" class="px-4 py-2 bg-[#b00020] text-white rounded">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

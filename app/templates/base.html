@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Becoming Me{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+<body class="bg-white text-gray-900">
+    {% include 'includes/navigation.html' %}
+    <main class="min-h-screen px-4 py-8">
+    {% block content %}{% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="fixed top-4 right-4 z-50 space-y-2 max-w-sm">
+      {% for category, message in messages %}
+        <div class="bg-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-100 border-l-4 px-4 py-3 rounded shadow 
+                    text-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-700 
+                    border-{{ 'green' if category == 'success' else 'red' if category == 'error' else 'blue' }}-500">
+          <p>{{ message }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+</body>
+</html>

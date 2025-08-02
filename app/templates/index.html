@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="transition duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Becoming Me – Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a2d9d5c6bd.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MpXZcM6VmNL2kIqZb2gHyljxHe+8TeU0kZK3eL3Cq3cT6b6B1/YQoHQY1bFvUv7dSc1aXjcN6UQjU5+7t4zEpw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            offwhite: '#f8f8f8',
+            cherryred: '#9B1C31',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-offwhite dark:bg-gray-900 text-gray-800 dark:text-white font-sans transition duration-500">
+
+  
+ <nav class="bg-cherryred dark:bg-gray-800 text-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/" class="text-2xl font-bold">Becoming Me</a>
+    <ul class="hidden md:flex space-x-6 text-sm font-medium items-center">
+      <li><a href="/" class="hover:text-offwhite">Home</a></li>
+      <li class="relative group">
+        <a href="/about" class="hover:text-offwhite flex items-center">
+          About Me
+          <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </a>
+        <ul class="absolute hidden group-hover:block bg-cherryred dark:bg-gray-700 text-white rounded shadow-lg mt-2 w-48 z-50">
+          <li><a href="/company" class="block px-4 py-2 hover:bg-white hover:text-cherryred">Company</a></li>
+          <li><a href="/career" class="block px-4 py-2 hover:bg-white hover:text-cherryred">Career Plan</a></li>
+          <li><a href="/resume" class="block px-4 py-2 hover:bg-white hover:text-cherryred">Resume</a></li>
+        </ul>
+        <li><a href="/services" class="hover:text-offwhite">Services</a></li>
+        <li><a href="/portfolio" class="hover:text-offwhite">Portfolio</a></li>
+        <li><a href="/blog" class="hover:text-offwhite">Blog</a></li>
+        <li><a href="/contact" class="hover:text-offwhite">Contact</a></li>
+        <li><a href="/dashboard" class="hover:text-offwhite">Dashboard</a></li>
+        {% if current_user.is_authenticated %}
+          <a href="/logout" class="hover:text-offwhite">Logout</a>
+        {% else %}
+          <a href="/login" class="hover:text-offwhite">Login</a>
+        {% endif %}
+      </ul>
+      <button id="darkToggle" class="ml-4 text-white text-xl focus:outline-none">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </nav>
+
+ <section class="relative bg-cover bg-center min-h-screen flex items-center justify-center text-center px-6 transition-all duration-700"
+         style="background-image: url('https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?w=1000&auto=format&fit=crop&q=80');">
+  
+  
+  <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+
+
+  <div class="relative z-10 text-white p-6 -mt-40 md:-mt-64 text-shadow-lg">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Becoming Me</h1>
+    <p class="text-xl md:text-2xl">The Digital Journey of Emmanuel Owusu Boakye</p>
+  </div>
+</section>
+
+
+
+ 
+  <section class="py-16 px-6 md:px-20 bg-offwhite dark:bg-gray-900 transition">
+  <h2 class="text-3xl font-semibold mb-10 text-center text-cherryred dark:text-white">Services</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    
+    
+    <a href="{{ url_for('main.web_development') }}" class="block bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300">
+      <h3 class="text-xl font-bold mb-2 text-cherryred">Full-Stack Development</h3>
+      <p>From frontend to backend – I build scalable, modern web apps.</p>
+    </a>
+
+    
+    <a href="{{ url_for('main.graphic_design') }}" class="block bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300">
+      <h3 class="text-xl font-bold mb-2 text-cherryred">Graphic Design</h3>
+      <p>Visual storytelling, UI/UX, brand design, and creative direction.</p>
+    </a>
+
+    
+    <a href="{{ url_for('main.cybersecurity') }}" class="block bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition-all duration-300">
+      <h3 class="text-xl font-bold mb-2 text-cherryred">Cybersecurity Insights</h3>
+      <p>Secure coding practices and awareness for modern applications.</p>
+    </a>
+
+  </div>
+</section>
+
+
+  
+  <section class="py-16 px-6 md:px-20 bg-gray-50 dark:bg-gray-950">
+  <h2 class="text-3xl font-semibold mb-10 text-center text-cherryred dark:text-white">Why Choose Me?</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <i class="fas fa-user-shield text-4xl text-cherryred mb-4"></i>
+      <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Trusted & Verified</h3>
+      <p class="text-gray-600 dark:text-gray-300">Certified in Full-Stack Development and Cybersecurity with client satisfaction as top priority.</p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <i class="fas fa-bolt text-4xl text-cherryred mb-4"></i>
+      <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Fast Turnaround</h3>
+      <p class="text-gray-600 dark:text-gray-300">Timely delivery with no compromise on quality or creativity. Deadlines are sacred.</p>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <i class="fas fa-laptop-code text-4xl text-cherryred mb-4"></i>
+      <h3 class="text-xl font-bold mb-2 text-gray-800 dark:text-white">Full-Stack Expertise</h3>
+      <p class="text-gray-600 dark:text-gray-300">From UI/UX to backend logic and database integration – everything tailored to your goals.</p>
+    </div>
+
+  </div>
+</section>
+
+    <section class="py-16 px-6 md:px-20 bg-offwhite dark:bg-gray-900">
+  <h2 class="text-3xl font-semibold mb-10 text-center text-cherryred dark:text-white">What Our Clients Say</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+
+    
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kofi" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-cherryred">
+      <p class="text-gray-600 dark:text-gray-300 italic mb-2">"Emmanuel transformed our outdated site into a sleek, modern platform. Truly a pro!"</p>
+      <div class="font-bold text-cherryred">Hallway Grant, Startup Founder</div>
+      <div class="flex justify-center mt-3 gap-4 text-2xl">
+        <a href="#"><i class="fab fa-facebook-f text-blue-600 hover:text-blue-800 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in text-blue-500 hover:text-blue-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-instagram text-pink-500 hover:text-pink-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-tiktok text-black dark:text-white hover:text-gray-600 transition duration-300 cursor-pointer"></i></a>
+      </div>
+    </div>
+
+    
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Ama" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-cherryred">
+      <p class="text-gray-600 dark:text-gray-300 italic mb-2">"The cybersecurity consultation gave our dev team the confidence to launch safely."</p>
+      <div class="font-bold text-cherryred">Jane Tuchel, CTO</div>
+      <div class="flex justify-center mt-3 gap-4 text-2xl">
+        <a href="#"><i class="fab fa-facebook-f text-blue-600 hover:text-blue-800 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in text-blue-500 hover:text-blue-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-instagram text-pink-500 hover:text-pink-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-tiktok text-black dark:text-white hover:text-gray-600 transition duration-300 cursor-pointer"></i></a>
+      </div>
+    </div>
+
+
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow text-center transform transition-transform duration-300 hover:-translate-y-2">
+      <img src="https://randomuser.me/api/portraits/women/18.jpg" alt="Nana" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-cherryred">
+      <p class="text-gray-600 dark:text-gray-300 italic mb-2">"Creative, responsive, and extremely reliable. I’ll be working with him again."</p>
+      <div class="font-bold text-cherryred">Chen Gwen, Brand Manager</div>
+      <div class="flex justify-center mt-3 gap-4 text-2xl">
+        <a href="#"><i class="fab fa-facebook-f text-blue-600 hover:text-blue-800 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in text-blue-500 hover:text-blue-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-instagram text-pink-500 hover:text-pink-700 transition duration-300 cursor-pointer"></i></a>
+        <a href="#"><i class="fab fa-tiktok text-black dark:text-white hover:text-gray-600 transition duration-300 cursor-pointer"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <footer class="bg-cherryred dark:bg-gray-800 text-white mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8">
+      <div>
+        <h5 class="font-bold text-lg mb-2">Becoming Me</h5>
+        <p>The Digital Journey of Emmanuel Owusu Boakye</p>
+      </div>
+      <div>
+        <h5 class="font-bold text-lg mb-2">Quick Links</h5>
+        <ul class="space-y-1 text-sm">
+          <li><a href="/services" class="hover:underline">Services</a></li>
+          <li><a href="/portfolio" class="hover:underline">Portfolio</a></li>
+          <li><a href="/contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-bold text-lg mb-2">Follow Me</h5>
+        <div class="flex space-x-4 text-xl">
+          <a href="#" class="hover:text-offwhite"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-offwhite"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="hover:text-offwhite"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center py-4 text-sm bg-cherryred/90 dark:bg-gray-700">
+      &copy; {{ now.year }} Becoming Me. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>

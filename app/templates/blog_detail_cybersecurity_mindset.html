@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Cybersecurity Mindset – Blog | Becoming Me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .prose h2 { margin-top: 1.5rem; font-size: 1.5rem; color: #b00020; }
+    .prose p { margin-top: 1rem; line-height: 1.7; }
+  </style>
+</head>
+<body class="bg-[#fffaf8] text-gray-800 font-sans">
+
+  <header class="bg-[#b00020] text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Becoming Me</h1>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/blog" class="underline font-semibold">← Back to Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-[#b00020] mb-4">My Cybersecurity Mindset</h1>
+    <p class="text-sm text-gray-500 mb-8">Posted on July 24, 2025 by Emmanuel Owusu Boakye</p>
+
+    <div class="prose max-w-none text-lg">
+      <p>
+        In a world where every application, every login, and every click could be exploited — <strong>security is not optional</strong>. It’s a mindset. One I had to develop, refine, and internalize as I grew from a developer into a more responsible engineer.
+      </p>
+
+      <h2> Why Cybersecurity Matters — Even for “Regular” Developers</h2>
+      <p>
+        For a long time, I thought security was someone else’s job — the domain of hackers, network admins, and penetration testers. But the truth is, **every line of code you write can either protect or expose someone.**
+      </p>
+      <p>
+        Whether you're building a login page or an API, you're shaping trust. And if that trust is broken, it’s not just code that fails — it’s people’s privacy, money, and sometimes, their safety.
+      </p>
+
+      <h2> Thinking Like a Threat</h2>
+      <p>
+        Adopting a cybersecurity mindset means learning to think like an attacker. I started asking new questions:
+      </p>
+      <ul class="list-disc pl-6">
+        <li>Can this input be injected with malicious code?</li>
+        <li>What happens if someone tampers with the request headers?</li>
+        <li>Is this file upload being validated properly?</li>
+        <li>Can someone guess our API endpoint and exploit it?</li>
+      </ul>
+      <p>
+        This shift didn’t make me paranoid — it made me aware. It helped me move from “Does it work?” to “Is it safe?” every time I shipped.
+      </p>
+
+      <h2>Secure by Design: My Practices</h2>
+      <p>Here’s how I embed security into my development workflow today:</p>
+      <ul class="list-disc pl-6">
+        <li><strong>Input Validation:</strong> Never trust user input — always sanitize and validate, both client-side and server-side.</li>
+        <li><strong>Password Handling:</strong> Hash with strong algorithms like <code>bcrypt</code> and never store plaintext passwords.</li>
+        <li><strong>Session Security:</strong> I secure sessions using HTTPOnly and Secure cookies with proper timeout handling.</li>
+        <li><strong>Role-based Access:</strong> I lock down admin routes and APIs based on user roles.</li>
+        <li><strong>Regular Audits:</strong> I review code for vulnerabilities and keep dependencies updated.</li>
+      </ul>
+
+      <h2> Real-World Lessons</h2>
+      <p>
+        I once deployed a small web app that allowed file uploads but didn’t restrict file types. A friend uploaded a `.php` file that, if executed, could have opened a remote shell. That wake-up call changed everything.
+      </p>
+      <p>
+        I began studying OWASP Top 10 vulnerabilities, attending local cybersecurity events, and testing my apps with tools like Burp Suite and OWASP ZAP.
+      </p>
+
+      <h2> Security as Empathy</h2>
+      <p>
+        At its core, cybersecurity is about empathy. You protect users from risks they don’t even know exist. You anticipate threats so they don’t have to suffer consequences. You build not just with speed, but with care.
+      </p>
+
+      <h2> Final Thoughts</h2>
+      <p>
+        The cybersecurity mindset is now part of everything I build. It’s made me more meticulous, more thoughtful, and more proud of my work. I still love beautiful UIs and smooth animations — but behind all of it, I want to know that **my code is safe**.
+      </p>
+      <p>
+        Because in the end, great code isn't just functional — it's <strong>trustworthy</strong>.
+      </p>
+    </div>
+
+    <a href="/blog" class="mt-8 inline-block text-[#b00020] hover:underline font-semibold">← Back to Blog</a>
+  </main>
+
+  <footer class="text-center py-6 text-gray-500 bg-[#fffaf8] border-t border-gray-200">
+    &copy; 2025 Emmanuel Owusu Boakye – Becoming Me
+  </footer>
+
+</body>
+</html>

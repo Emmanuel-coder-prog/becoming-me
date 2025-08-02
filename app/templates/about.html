@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            offwhite: '#f8f8f8',
+            cherryred: '#9B1C31',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+
+  <nav class="bg-cherryred text-white dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold">Becoming Me</a>
+      <ul class="hidden md:flex space-x-6 text-sm font-medium">
+        <li><a href="/" class="hover:text-offwhite">Home</a></li>
+        <li><a href="/about" class="hover:text-offwhite">About Me</a></li>
+        <li><a href="/company" class="hover:text-offwhite">Company</a></li>
+        <li><a href="/career" class="hover:text-offwhite">Career Plan</a></li>
+        <li><a href="/resume" class="hover:text-offwhite">Resume</a></li>
+        <li><a href="/services" class="hover:text-offwhite">Services</a></li>
+        <li><a href="/portfolio" class="hover:text-offwhite">Portfolio</a></li>
+        <li><a href="/blog" class="hover:text-offwhite">Blog</a></li>
+        <li><a href="/contact" class="hover:text-offwhite">Contact</a></li>
+        <li><a href="/dashboard" class="hover:text-offwhite">Dashboard</a></li>
+      </ul>
+     
+      <button id="theme-toggle" class="ml-6 text-white hover:text-gray-300 focus:outline-none text-sm">🌙</button>
+    </div>
+  </nav>
+
+  
+  <section class="relative bg-cover bg-center min-h-[60vh] flex items-center justify-center text-center px-6" style="background-image: url('https://plus.unsplash.com/premium_photo-1685086785636-2a1a0e5b591f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGV2ZWxvcGVyfGVufDB8fDB8fHww');">
+    <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+    <div class="relative z-10 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold">About Me</h1>
+      <p class="mt-4 text-lg md:text-xl">Get to know the story behind my digital journey</p>
+    </div>
+  </section>
+
+
+  <section class="py-16 px-6 md:px-20 bg-gray-100 dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="https://nueltechsolutions.com/en/wp-content/uploads/2025/05/WhatsApp-Image-2024-11-27-at-12.22.08-PM-1-600x800.png" alt="Emmanuel" class="rounded-lg shadow-lg w-full" />
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mb-4 text-cherryred dark:text-white">Emmanuel Owusu Boakye</h2>
+        <p class="mb-4">I’m a passionate Full-Stack Developer, Graphic Designer, and Cybersecurity enthusiast. My journey into tech began with a curiosity to build, break, and secure things digitally.</p>
+        <p class="mb-4">With a background in design and a mindset for systems, I merge creativity with logic to deliver solutions that are beautiful, functional, and secure.</p>
+        <p>My mission? To build tech that tells stories, solves real problems, and inspires growth — while staying true to who I am.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="py-16 px-6 md:px-20 bg-white dark:bg-gray-900">
+    <h2 class="text-3xl font-semibold mb-10 text-center text-cherryred dark:text-white">Core Values</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 rounded-lg shadow hover:shadow-xl transition border dark:border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Authenticity</h3>
+        <p>I stay real — my work reflects who I am and what I believe in.</p>
+      </div>
+      <div class="p-6 rounded-lg shadow hover:shadow-xl transition border dark:border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Excellence</h3>
+        <p>I aim for quality over shortcuts. Always pushing limits.</p>
+      </div>
+      <div class="p-6 rounded-lg shadow hover:shadow-xl transition border dark:border-gray-700">
+        <h3 class="text-xl font-bold mb-2">Growth</h3>
+        <p>Every project, every client, every line of code — I grow.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const rootEl = document.documentElement;
+
+    
+    if (localStorage.getItem('theme') === 'dark') {
+      rootEl.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      rootEl.classList.toggle('dark');
+      const isDark = rootEl.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+
+</body>
+</html>

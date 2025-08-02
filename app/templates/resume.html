@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#fffaf8] text-gray-800 font-sans">
+
+  
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#b00020]">Becoming Me</h1>
+      <nav class="space-x-4 text-sm font-medium">
+        <a href="/" class="text-gray-600 hover:text-[#b00020]">Home</a>
+        <a href="/about" class="text-gray-600 hover:text-[#b00020]">About</a>
+        <a href="/services" class="text-gray-600 hover:text-[#b00020]">Services</a>
+        <a href="/company" class="text-gray-600 hover:text-[#b00020]">Company</a>
+        <a href="/contact" class="text-gray-600 hover:text-[#b00020]">Contact</a>
+        <a href="/resume" class="text-[#b00020] font-semibold underline">Resume</a>
+       
+      </nav>
+    </div>
+  </header>
+
+  
+  <section class="text-center py-20 bg-gradient-to-r from-[#fff0f0] to-[#ffe8e8]">
+    <h2 class="text-5xl font-extrabold text-[#b00020] mb-4">My Resume</h2>
+    <p class="text-lg text-gray-700 mb-6">Download my CV or explore key experience and skills below.</p>
+    <a href="{{ url_for('static', filename='files/emmanuel_resume.pdf') }}" 
+       class="mt-4 inline-block bg-[#b00020] text-white px-6 py-3 rounded-md hover:bg-red-800 transition duration-300"
+       download>
+      Download CV
+    </a>
+  </section>
+
+  <section class="max-w-5xl mx-auto py-16 px-6">
+    <h3 class="text-3xl font-bold text-[#b00020] mb-8">Experience</h3>
+
+    <div class="space-y-10">
+      <div>
+        <h4 class="text-2xl font-semibold text-[#b00020]">Full-Stack Developer – NUEL TECH Solutions</h4>
+        <p class="text-sm text-gray-500">2023 – Present</p>
+        <p class="mt-2 text-gray-700">Built secure full-stack web apps using Flask, React, and PostgreSQL. Led UI/UX design and integrated security best practices.</p>
+      </div>
+
+      <div>
+        <h4 class="text-2xl font-semibold text-[#b00020]">Graphic Designer – Freelance</h4>
+        <p class="text-sm text-gray-500">2021 – 2023</p>
+        <p class="mt-2 text-gray-700">Designed brand identities, digital banners, and product visuals for clients using Adobe and Figma tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 mt-10">
+    &copy; 2025 Emmanuel Owusu Boakye – Becoming Me
+  </footer>
+
+</body>
+</html>

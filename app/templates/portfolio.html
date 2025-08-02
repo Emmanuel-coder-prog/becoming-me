@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – Becoming Me</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#fffaf8] text-gray-800 font-sans">
+
+  <header class="bg-[#b00020] text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Becoming Me</h1>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+        <a href="/" class="hover:text-gray-200">Home</a>
+        <a href="/about" class="hover:text-gray-200">About</a>
+        <a href="/company" class="hover:text-gray-200">Company</a>
+        <a href="/services" class="hover:text-gray-200">Services</a>
+        <a href="/portfolio" class="font-bold text-white underline">Portfolio</a>
+        <a href="/resume" class="hover:text-gray-200">Resume</a>
+        <a href="/contact" class="hover:text-gray-200">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
+           style="background-image: url('https://plus.unsplash.com/premium_photo-1661414423895-5854eb6b573a?w=500&auto=format&fit=crop&q=60');">
+    <div class="bg-black/50 w-full h-full absolute top-0 left-0"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl md:text-5xl font-bold">My Portfolio</h1>
+      <p class="mt-4 text-lg md:text-xl">Featured projects and case studies</p>
+    </div>
+  </section>
+
+  <section class="py-16 px-6 md:px-20 bg-[#fffaf8]">
+    <h2 class="text-3xl font-bold mb-10 text-center text-[#b00020]">Recent Work</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1348247165/photo/build-your-brand-symbol-businessman-turns-wooden-cubes-and-changes-the-word-build-to-brand.webp?a=1&b=1&s=612x612&w=0&k=20&c=3CyI_2Pab_o-OFk0-fGZ0scO3MGtpF6TY6UyCQd7_fk=" alt="Personal Branding Site" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">Personal Branding Site</h3>
+          <p>A full-stack portfolio built with Flask, PostgreSQL, and Tailwind CSS. Includes login, e-commerce, and a blog system.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1189378904/vector/mobile-apps-creation-of-a-mobile-application-web-page-created-from-separate-blocks-user.jpg?s=612x612&w=0&k=20&c=HIiI8lu3-_-IhUS-Jj20zw0AS-w1FIKXGn_l4qdHAzQ=" alt="UI/UX Redesign" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">UI/UX Redesign</h3>
+          <p>Redesigned user experience and interface for a startup travel app. Prototyped in Figma and built with React.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1486511048/photo/cyber-security-data-protection-business-working-on-compute-intelligenc-digital-tablet-global.jpg?s=612x612&w=0&k=20&c=q8kE4lc7uVF2gN2_5aaW4I14a5zCqKxPgcbPSEBUgOo=" alt="Cybersecurity Dashboard" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">Cybersecurity Dashboard</h3>
+          <p>Developed a secure admin dashboard with user roles, encryption, and audit logging using Flask & SQLAlchemy.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1428709516/photo/shopping-online-woman-hand-online-shopping-on-laptop-computer-with-virtual-graphic-icon.jpg?s=612x612&w=0&k=20&c=ROAncmFL4lbSQdU4VOhyXu-43ngzfEqHE5ZZAw5FtYk=" alt="E-Commerce Platform" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">E-Commerce Platform</h3>
+          <p>Built a complete online store with product management, Stripe payments, and order history with Flask and Jinja2.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1480239219/photo/an-analyst-uses-a-computer-and-dashboard-for-data-business-analysis-and-data-management.jpg?s=612x612&w=0&k=20&c=URv6HYZ8L3NCQnxT8-ITvInMW7mlsTE6EjnXHaqF-H4=" alt="Analytics Engine" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">Analytics Engine</h3>
+          <p>Designed a data analytics dashboard using Chart.js and Python backend for tracking performance metrics in real-time.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+        <img src="https://media.istockphoto.com/id/1401461124/photo/hand-of-businessman-using-smart-phone-with-coin-icon.jpg?s=612x612&w=0&k=20&c=937FY4moyMx2nplMSkHMSWMT4YpcHi1u7hykfYckwv0=" alt="Smart Finance App" class="w-full h-60 object-contain p-4">
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2 text-[#b00020]">Smart Finance App</h3>
+          <p>A mobile-first app for tracking personal expenses, integrating OCR for receipt scanning and auto-categorization.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 bg-[#fffaf8] border-t border-gray-200">
+    &copy; 2025 Emmanuel Owusu Boakye – Becoming Me
+  </footer>
+
+</body>
+</html>
